@@ -39,6 +39,16 @@
           alert("problem communicating with the server");
       }
     });
+});
+$("#emptycart").click(function() { $.ajax({
+    type: "get", url: "{{ url('products/emptycart')   }}",
+    success: function() {
+        $('#shoppingcart').text(0);
+    },
+    error: function() {
+        alert("problem communicating with the server");
+    }
+  });
 }); </script>
 @endsection('content')
 
